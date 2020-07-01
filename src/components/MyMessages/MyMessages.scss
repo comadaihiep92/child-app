@@ -1,0 +1,64 @@
+// my messages
+
+.messages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  &__avata {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  &__item {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    // margin-bottom: 10px;
+    border-bottom: 1px solid #cdcdcd;
+  }
+  &__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0;
+  }
+  &__list-sub {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  &__time {
+    text-align: right;
+    color: #187bad;
+  }
+  &__text,
+  &__desc {
+    width: 80%;
+  }
+  &__text {
+    color: #187bad;
+  }
+  &__sub {
+    color: #8d8d8d;
+  }
+  &__desc {
+    color: #a4a3a3;
+    font-size: 13px;
+  }
+}
+
+.img--avataa {
+  width: 50px;
+  height: 50px;
+}

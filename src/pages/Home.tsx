@@ -16,12 +16,14 @@ import React from "react";
 import "./Home.scss";
 
 import iconPicture from "../images/icon-mypicture.png";
-import iconMessage from "../images/icon-message.png";
+import iconMarketing from "../images/icon-marketing.png";
 import iconSchool from "../images/icon-document.png";
 import iconInfoChild from "../images/icon-infochild.png";
 import iconAppointment from "../images/icon-appointment.png";
-import iconAttendance from "../images/icon-attendance.png";
 import iconNotification from "../images/icon-notification.png";
+import iconMyprofile from "../images/icon-myprofile.png";
+import iconMymessage from "../images/icon-mymessage.png";
+import iconMinigroup from "../images/icon-minigroup.png";
 
 const Home: React.FC = () => {
   return (
@@ -43,6 +45,26 @@ const Home: React.FC = () => {
           </IonHeader>
 
           <IonList className="home__list">
+            <IonRouterLink href="/myprofile" className="home__link">
+              <IonList className="home__item">
+                <IonImg
+                  className="home__image"
+                  src={iconMyprofile}
+                  alt=""
+                ></IonImg>
+                <IonText className="home__title">My Profile</IonText>
+              </IonList>
+            </IonRouterLink>
+            <IonRouterLink href="/mymessages" className="home__link">
+              <IonList className="home__item">
+                <IonImg
+                  className="home__image"
+                  src={iconMymessage}
+                  alt=""
+                ></IonImg>
+                <IonText className="home__title">My Messages</IonText>
+              </IonList>
+            </IonRouterLink>
             <IonRouterLink href="/mypicture" className="home__link">
               <IonList className="home__item">
                 <IonImg
@@ -51,26 +73,6 @@ const Home: React.FC = () => {
                   alt=""
                 ></IonImg>
                 <IonText className="home__title">My Pictures</IonText>
-              </IonList>
-            </IonRouterLink>
-            <IonRouterLink href="/messagecenter" className="home__link">
-              <IonList className="home__item">
-                <IonImg
-                  className="home__image"
-                  src={iconMessage}
-                  alt=""
-                ></IonImg>
-                <IonText className="home__title">Message Center</IonText>
-              </IonList>
-            </IonRouterLink>
-            <IonRouterLink href="#" className="home__link">
-              <IonList className="home__item">
-                <IonImg
-                  className="home__image"
-                  src={iconSchool}
-                  alt=""
-                ></IonImg>
-                <IonText className="home__title">School Documents</IonText>
               </IonList>
             </IonRouterLink>
             <IonRouterLink href="/childdailyinfo" className="home__link">
@@ -85,6 +87,17 @@ const Home: React.FC = () => {
                 </IonText>
               </IonList>
             </IonRouterLink>
+            <IonRouterLink href="/schooldocuments" className="home__link">
+              <IonList className="home__item">
+                <IonImg
+                  className="home__image"
+                  src={iconSchool}
+                  alt=""
+                ></IonImg>
+                <IonText className="home__title">School Documents</IonText>
+              </IonList>
+            </IonRouterLink>
+
             <IonRouterLink href="/appointmentcenter" className="home__link">
               <IonList className="home__item">
                 <IonImg
@@ -95,14 +108,24 @@ const Home: React.FC = () => {
                 <IonText className="home__title">Appointment Center</IonText>
               </IonList>
             </IonRouterLink>
+            <IonRouterLink href="/marketing" className="home__link">
+              <IonList className="home__item">
+                <IonImg
+                  className="home__image"
+                  src={iconMarketing}
+                  alt=""
+                ></IonImg>
+                <IonText className="home__title">Marketing</IonText>
+              </IonList>
+            </IonRouterLink>
             <IonRouterLink href="#" className="home__link">
               <IonList className="home__item">
                 <IonImg
                   className="home__image"
-                  src={iconAttendance}
+                  src={iconMinigroup}
                   alt=""
                 ></IonImg>
-                <IonText className="home__title">Attendance</IonText>
+                <IonText className="home__title">Mini club</IonText>
               </IonList>
             </IonRouterLink>
           </IonList>

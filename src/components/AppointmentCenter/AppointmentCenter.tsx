@@ -40,9 +40,9 @@ const AppointmentCenter: React.FC = () => {
       <IonHeader className="ion-no-border appointment__header">
         <IonToolbar className="appointment__toolbar">
           <IonButtons slot="start">
-            <Link to="/">
+            <IonRouterLink href="/home">
               <IonImg className="icon icon-back" src={iconBack} alt="" />
-            </Link>
+            </IonRouterLink>
           </IonButtons>
 
           <IonTitle className="appointment__title-header">
@@ -52,59 +52,99 @@ const AppointmentCenter: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonList className="appointment__list">
-          <IonText className="appointment__title">
-            Parents are sure to be present
-          </IonText>
-
           <IonModal isOpen={showModal} cssClass="modal">
             <IonList className="modal__list">
-              <IonList className="modal__item">
-                <IonImg className="img img--avata" src={img2} alt="" />
-                <IonList className="modal__content">
-                  <IonText className="modal__text">
-                    Ali M.<IonLabel className="modal__ref">(Father)</IonLabel>
+              <IonList className="modal__item ion-no-padding">
+                <IonList className="modal__content modal__content--big">
+                  <IonText className="appointment__reminder appointment__reminder--big">
+                    Appointment reminder
                   </IonText>
-                  <IonRouterLink className="modal__link">
-                    View Profile
-                  </IonRouterLink>
                 </IonList>
-                <IonButton className="btn-modal btn-modal--cancel">
-                  Cancel
+              </IonList>
+              <IonList className="modal__item ">
+                <IonList className="modal__content ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonList className="appointment__times ion-no-padding">
+                    <IonImg
+                      className="icon icon--clock"
+                      src={iconClock}
+                      alt=""
+                    />
+                    <IonText className="appointment__date">
+                      Friday: at 4 pm
+                    </IonText>
+                  </IonList>
+                </IonList>
+                <IonButton className="btn-modal btn-modal--booked">
+                  Booked
                 </IonButton>
               </IonList>
-              <IonList className="modal__item">
-                <IonImg className="img img--avata" src={imgChild} alt="" />
-                <IonList className="modal__content">
-                  <IonText className="modal__text">
-                    Alya Ali.
-                    <IonLabel className="modal__ref">(Dauther)</IonLabel>
+              <IonList className="modal__item ">
+                <IonList className="modal__content ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
                   </IonText>
-                  <IonRouterLink href="/paintclassroom" className="modal__link">
-                    Paint Clasroom
-                  </IonRouterLink>
+                  <IonList className="appointment__times ion-no-padding">
+                    <IonImg
+                      className="icon icon--clock"
+                      src={iconClock}
+                      alt=""
+                    />
+                    <IonText className="appointment__date">
+                      Friday: at 4 pm
+                    </IonText>
+                  </IonList>
                 </IonList>
-                <IonButton className="btn-modal btn-modal--desire">
-                  Desire Child
+                <IonButton className="btn-modal btn-modal--unbook">
+                  Booked
+                </IonButton>
+              </IonList>
+              <IonList className="modal__item ">
+                <IonList className="modal__content ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonList className="appointment__times ion-no-padding">
+                    <IonImg
+                      className="icon icon--clock"
+                      src={iconClock}
+                      alt=""
+                    />
+                    <IonText className="appointment__date">
+                      Friday: at 4 pm
+                    </IonText>
+                  </IonList>
+                </IonList>
+                <IonButton className="btn-modal btn-modal--unbook">
+                  Booked
+                </IonButton>
+              </IonList>
+              <IonList className="modal__item ">
+                <IonList className="modal__content ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonList className="appointment__times ion-no-padding">
+                    <IonImg
+                      className="icon icon--clock"
+                      src={iconClock}
+                      alt=""
+                    />
+                    <IonText className="appointment__date">
+                      Friday: at 4 pm
+                    </IonText>
+                  </IonList>
+                </IonList>
+                <IonButton className="btn-modal btn-modal--unbook">
+                  Booked
                 </IonButton>
               </IonList>
 
-              <IonTextarea
-                style={{ height: 200, marginTop: 20, marginBottom: 20 }}
-                className="childDaily__comment"
-                placeholder="Write Comment"
-              ></IonTextarea>
-              <IonRadioGroup className="yesno-group">
-                <IonList className="yesno">
-                  <IonItem lines="none" className="yesno__item ion-no-padding">
-                    <IonLabel className="yesno__text">Yes</IonLabel>
-                    <IonRadio className="yesno__input" value="yes" />
-                  </IonItem>
-                  <IonItem lines="none" className="yesno__item ion-no-padding">
-                    <IonLabel className="yesno__text">No</IonLabel>
-                    <IonRadio className="yesno__input" value="No" />
-                  </IonItem>
-                </IonList>
-              </IonRadioGroup>
+              <IonButton expand="full" className="btn-modal btn-modal--cofirm">
+                Cofirm
+              </IonButton>
             </IonList>
             <IonFab
               className="modal__close"
@@ -122,342 +162,104 @@ const AppointmentCenter: React.FC = () => {
           </IonModal>
 
           <IonList className="appointment__item ion-no-padding">
-            <IonList className="appointment__sub-item">
-              <IonText className="appointment__reminder">
-                Appointment reminder
-              </IonText>
-              <IonList className="appointment__times">
-                <IonImg className="icon icon--clock" src={iconClock} alt="" />
-                <IonText className="appointment__date">Friday: at 4 pm</IonText>
-              </IonList>
-              <IonList className="appointment__list-image">
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
+            <IonButton
+              className="ion-no-padding appointment__button"
+              onClick={() => setShowModal(true)}
+            >
+              <IonList className="appointment__sub-item">
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonText className="appointment__reminder status status--pending">
+                    Pending
+                  </IonText>
                 </IonList>
 
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__date">
+                    Friday: at 4 pm
+                  </IonText>
+                  <IonText className="appointment__date">2 day later</IonText>
                 </IonList>
               </IonList>
-            </IonList>
-            <IonList className="appointment__sub-item">
-              <IonText className="appointment__reminder">
-                Appointment reminder
-              </IonText>
-              <IonList className="appointment__times">
-                <IonImg className="icon icon--clock" src={iconClock} alt="" />
-                <IonText className="appointment__date">Friday: at 4 pm</IonText>
-              </IonList>
-              <IonList className="appointment__list-image">
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
+            </IonButton>
+            <IonButton
+              className="ion-no-padding appointment__button"
+              onClick={() => setShowModal(true)}
+            >
+              <IonList className="appointment__sub-item">
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonText className="appointment__reminder status status--close">
+                    Close
+                  </IonText>
                 </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__date">Wednesday</IonText>
+                  <IonText className="appointment__date">2 day ago</IonText>
                 </IonList>
               </IonList>
-            </IonList>
-            <IonList className="appointment__sub-item">
-              <IonText className="appointment__reminder">
-                Appointment reminder
-              </IonText>
-              <IonList className="appointment__times">
-                <IonImg className="icon icon--clock" src={iconClock} alt="" />
-                <IonText className="appointment__date">Friday: at 4 pm</IonText>
-              </IonList>
-              <IonList className="appointment__list-image">
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
+            </IonButton>
+            <IonButton
+              className="ion-no-padding appointment__button"
+              onClick={() => setShowModal(true)}
+            >
+              <IonList className="appointment__sub-item">
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonText className="appointment__reminder status status--close">
+                    Close
+                  </IonText>
                 </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__date">Thursday</IonText>
+                  <IonText className="appointment__date">10 days ago</IonText>
                 </IonList>
               </IonList>
-            </IonList>
-            <IonList className="appointment__sub-item">
-              <IonText className="appointment__reminder">
-                Appointment reminder
-              </IonText>
-              <IonList className="appointment__times">
-                <IonImg className="icon icon--clock" src={iconClock} alt="" />
-                <IonText className="appointment__date">Friday: at 4 pm</IonText>
-              </IonList>
-              <IonList className="appointment__list-image">
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
+            </IonButton>
+            <IonButton
+              className="ion-no-padding appointment__button"
+              onClick={() => setShowModal(true)}
+            >
+              <IonList className="appointment__sub-item">
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonText className="appointment__reminder status status--close">
+                    Close
+                  </IonText>
                 </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img1} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Jack</IonText>
-                </IonList>
-                <IonList className="appointment__item-image">
-                  <IonButton
-                    className="ion-no-padding appointment__button"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonImg className="img img--parent" src={img2} alt="" />
-                  </IonButton>
-                  <IonText className="appointment__name">Ali</IonText>
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__date">Monday</IonText>
+                  <IonText className="appointment__date">17 day ago</IonText>
                 </IonList>
               </IonList>
-            </IonList>
+            </IonButton>
+            <IonButton
+              className="ion-no-padding appointment__button"
+              onClick={() => setShowModal(true)}
+            >
+              <IonList className="appointment__sub-item">
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__reminder">
+                    Appointment reminder
+                  </IonText>
+                  <IonText className="appointment__reminder status status--close">
+                    Close
+                  </IonText>
+                </IonList>
+                <IonList className="appointment__child ion-no-padding">
+                  <IonText className="appointment__date">Wednesday</IonText>
+                  <IonText className="appointment__date">23 day ago</IonText>
+                </IonList>
+              </IonList>
+            </IonButton>
           </IonList>
         </IonList>
       </IonContent>

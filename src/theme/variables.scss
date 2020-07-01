@@ -272,6 +272,11 @@ http://ionicframework.com/docs/theming/ */
     --box-shadow: none;
     height: 40px;
   }
+  &--search {
+    --background: none;
+    --box-shadow: none;
+    margin: 0;
+  }
 }
 
 .label {
@@ -290,5 +295,8 @@ http://ionicframework.com/docs/theming/ */
   &--cloud,
   &--cancel {
     max-width: 40px;
+  }
+  &--search {
+    max-width: 20px;
   }
 }
