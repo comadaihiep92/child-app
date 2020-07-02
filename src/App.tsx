@@ -11,6 +11,7 @@ import SchoolDocuments from "./components/SchoolDocuments/SchoolDocuments";
 import Login from "./components/Login/Login";
 import Marketing from "./components/Marketing/Marketing";
 import ViewMsg from "./components/ViewMsg/ViewMsg";
+import MyProfile from "./components/MyProfile/MyProfile";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -53,6 +54,7 @@ const App: React.FC = () => (
         />
         <Route path="/marketing" component={Marketing} exact={true} />
         <Route path="/viewmsg" component={ViewMsg} exact={true} />
+        <Route path="/myprofile" component={MyProfile} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
