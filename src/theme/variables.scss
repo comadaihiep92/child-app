@@ -282,6 +282,14 @@ http://ionicframework.com/docs/theming/ */
 .label {
   &--blue {
     color: #187bad !important;
+    font-weight: 600;
+    // font-size: 15px !important;
+  }
+  &--top {
+    margin-top: 5px;
+  }
+  &--right {
+    margin-right: auto;
   }
 }
 
@@ -298,5 +306,12 @@ http://ionicframework.com/docs/theming/ */
   }
   &--search {
     max-width: 20px;
+  }
+}
+
+.input {
+  &--small {
+    max-height: 38px;
+    height: 38px;
   }
 }

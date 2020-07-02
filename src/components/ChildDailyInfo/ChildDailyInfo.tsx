@@ -20,6 +20,8 @@ import {
   IonSelect,
   IonInput,
   IonButton,
+  IonProgressBar,
+  IonCheckbox,
 } from "@ionic/react";
 
 import "./ChildDailyInfo.scss";
@@ -35,7 +37,17 @@ const ChildDailyInfo: React.FC = () => {
   const [eat, setEat] = useState("1 Times");
   const [week, setWeek] = useState(["Week 1"]);
   const [day, setDay] = useState(["Monday"]);
-  const [menu, setMenu] = useState("");
+  const [menu, setMenu] = useState("Banana");
+  const [checked1, setChecked1] = useState(true);
+  const [checked2, setChecked2] = useState(true);
+  const [checked3, setChecked3] = useState(true);
+  const [checked4, setChecked4] = useState(true);
+
+  // const checkboxList = [
+  //   { val: "Pepperoni", isChecked: true },
+  //   { val: "Sausage", isChecked: false },
+  //   { val: "Mushroom", isChecked: false },
+  // ];
 
   return (
     <IonPage className="appointment">
@@ -197,7 +209,7 @@ const ChildDailyInfo: React.FC = () => {
           </IonList>
           <IonList className="childDaily__list ion-no-padding">
             <IonText className="childDaily__title">The menu of the day</IonText>
-            <IonList className="childDaily__list-day ion-no-padding">
+            {/* <IonList className="childDaily__list-day ion-no-padding">
               <IonSelect
                 className="list-day__item"
                 value={week}
@@ -222,183 +234,452 @@ const ChildDailyInfo: React.FC = () => {
                 <IonSelectOption value="Saturday">Saturday</IonSelectOption>
                 <IonSelectOption value="Sunday">Sunday</IonSelectOption>
               </IonSelect>
-            </IonList>
-            <IonRadioGroup
+            </IonList> */}
+            {/* {checkboxList.map(({ val, isChecked }, i) => (
+              <IonItem key={i}>
+                <IonLabel>{val}</IonLabel>
+                <IonCheckbox slot="end" value={val} checked={isChecked} />
+              </IonItem>
+            ))} */}
+            {/* <IonRadioGroup
               value={menu}
+              allowEmptySelection
               onIonChange={(e) => setMenu(e.detail.value)}
-            >
-              <IonList className="childDaily__radio childDaily__radio--big ion-no-padding">
-                <IonItem lines="none" className="childDaily__radio-item">
-                  <IonRadio
+            > */}
+            <IonList className="childDaily__menu-list">
+              {checked1 ? (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item ion-no-padding"
+                >
+                  {/* <IonRadio
+                      name="menulist"
+                      className="childDaily__rdo"
+                      value="Cheese Sandwitch"
+                    ></IonRadio> */}
+                  <IonCheckbox
                     className="childDaily__rdo"
                     value="Cheese Sandwitch"
-                  ></IonRadio>
-                  {menu === "Cheese Sandwitch" ? (
-                    <>
-                      <IonImg
-                        className="icon icon--selected childDaily__selected childDaily__selected--show"
-                        src={iconSelected}
-                        alt=""
-                      />
-                      <IonLabel className="childDaily__label childDaily__label--check">
-                        <IonImg
-                          className="img img--fruit"
-                          src={imgSandwitch}
-                          alt=""
-                        />
-                        Cheese Sandwitch
-                      </IonLabel>
-                    </>
-                  ) : (
-                    <>
-                      <IonImg
-                        className="icon icon--selected childDaily__selected"
-                        src={iconSelected}
-                        alt=""
-                      />
-                      <IonLabel className="childDaily__label">
-                        Cheese Sandwitch
-                      </IonLabel>
-                    </>
-                  )}
-                </IonItem>
+                    checked={checked1}
+                    onIonChange={(e) => setChecked1(e.detail.checked)}
+                  />
 
-                {/* <IonList className="childDaily__radio-item childDaily__radio-height">
-                  <IonLabel className="childDaily__label">
+                  <IonImg
+                    className="icon icon--selected childDaily__selected childDaily__selected--show"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonList className="childDaily__menu-text childDaily__menu-text--check">
                     <IonImg
                       className="img img--fruit"
                       src={imgSandwitch}
                       alt=""
                     />
-                    Cheese Sandwitch
-                  </IonLabel>
-                  <IonRadio className="childDaily__rdo"></IonRadio>
-                </IonList>
+                    <IonText>Cheese Sandwitch</IonText>
+                  </IonList>
+                </IonItem>
+              ) : (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item ion-no-padding"
+                >
+                  {/* <IonRadio
+                    name="menulist"
+                    className="childDaily__rdo"
+                    value="Cheese Sandwitch"
+                  ></IonRadio> */}
+                  <IonCheckbox
+                    className="childDaily__rdo"
+                    value="Cheese Sandwitch"
+                    checked={checked1}
+                    onIonChange={(e) => setChecked1(e.detail.checked)}
+                  />
 
-                <IonList className="childDaily__radio-item childDaily__radio-height">
-                  <IonImg className="img img--fruit" src={imgBanana} alt="" />
-                  <IonLabel className="childDaily__label">Banana</IonLabel>
-                  <IonRadio className="childDaily__rdo"></IonRadio>
-                </IonList>
-                <IonList className="childDaily__radio-item childDaily__radio-height">
-                  <IonImg className="img img--fruit" src={imgApple} alt="" />
-                  <IonLabel className="childDaily__label">Apple</IonLabel>
-                  <IonRadio className="childDaily__rdo"></IonRadio>
-                </IonList>
-                <IonList className="childDaily__radio-item childDaily__radio-height">
                   <IonImg
-                    className="img img--fruit"
-                    src={imgMangojuice}
+                    className="icon icon--selected childDaily__selected"
+                    src={iconSelected}
                     alt=""
                   />
-                  <IonLabel className="childDaily__label">Mango Juice</IonLabel>
-                  <IonRadio className="childDaily__rdo"></IonRadio>
-                </IonList> */}
-              </IonList>
-            </IonRadioGroup>
-            <IonTextarea
-              className="childDaily__comment"
-              placeholder="Write Comment"
-            ></IonTextarea>
+                  <IonList className="childDaily__menu-text">
+                    <IonImg
+                      className="img img--fruit"
+                      src={imgSandwitch}
+                      alt=""
+                    />
+                    <IonText>Cheese Sandwitch</IonText>
+                  </IonList>
+                </IonItem>
+              )}
+              {checked2 ? (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item ion-no-padding"
+                >
+                  {/* <IonRadio
+                      name="menulist"
+                      className="childDaily__rdo"
+                      value="Banana"
+                    ></IonRadio> */}
+                  <IonCheckbox
+                    className="childDaily__rdo"
+                    value="Banana"
+                    checked={checked2}
+                    onIonChange={(e) => setChecked2(e.detail.checked)}
+                  />
+
+                  <IonImg
+                    className="icon icon--selected childDaily__selected childDaily__selected--show"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonList className="childDaily__menu-text childDaily__menu-text childDaily__menu-text--check">
+                    <IonImg className="img img--fruit" src={imgBanana} alt="" />
+                    <IonText>Banana</IonText>
+                  </IonList>
+                </IonItem>
+              ) : (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item ion-no-padding"
+                >
+                  {/* <IonRadio
+                    name="menulist"
+                    className="childDaily__rdo"
+                    value="Banana"
+                  ></IonRadio> */}
+                  <IonCheckbox
+                    className="childDaily__rdo"
+                    value="Banana"
+                    checked={checked2}
+                    onIonChange={(e) => setChecked2(e.detail.checked)}
+                  />
+
+                  <IonImg
+                    className="icon icon--selected childDaily__selected"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonList className="childDaily__menu-text">
+                    <IonImg className="img img--fruit" src={imgBanana} alt="" />
+                    <IonText>Banana</IonText>
+                  </IonList>
+                </IonItem>
+              )}
+              {checked3 ? (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item ion-no-padding"
+                >
+                  {/* <IonRadio
+                    name="menulist"
+                    className="childDaily__rdo"
+                    value="Apple"
+                  ></IonRadio> */}
+                  <IonCheckbox
+                    className="childDaily__rdo"
+                    value="Apple"
+                    checked={checked3}
+                    onIonChange={(e) => setChecked3(e.detail.checked)}
+                  />
+
+                  <IonImg
+                    className="icon icon--selected childDaily__selected childDaily__selected--show"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonList className="childDaily__menu-text childDaily__menu-text childDaily__menu-text--check">
+                    <IonImg className="img img--fruit" src={imgApple} alt="" />
+                    <IonText>Apple</IonText>
+                  </IonList>
+                </IonItem>
+              ) : (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item ion-no-padding"
+                >
+                  {/* <IonRadio
+                    name="menulist"
+                    className="childDaily__rdo"
+                    value="Apple"
+                  ></IonRadio> */}
+                  <IonCheckbox
+                    className="childDaily__rdo"
+                    value="Apple"
+                    checked={checked3}
+                    onIonChange={(e) => setChecked3(e.detail.checked)}
+                  />
+                  <IonImg
+                    className="icon icon--selected childDaily__selected"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonList className="childDaily__menu-text">
+                    <IonImg className="img img--fruit" src={imgApple} alt="" />
+                    <IonText>Apple</IonText>
+                  </IonList>
+                </IonItem>
+              )}
+              {checked4 ? (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item  ion-no-padding"
+                >
+                  {/* <IonRadio
+                    name="menulist"
+                    className="childDaily__rdo"
+                    value="Mango Juice"
+                  ></IonRadio> */}
+                  <IonCheckbox
+                    className="childDaily__rdo"
+                    value="Mango Juice"
+                    checked={checked4}
+                    onIonChange={(e) => setChecked4(e.detail.checked)}
+                  />
+                  <IonImg
+                    className="icon icon--selected childDaily__selected childDaily__selected--show"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonList className="childDaily__menu-text childDaily__menu-text childDaily__menu-text--check">
+                    <IonImg
+                      className="img img--fruit"
+                      src={imgMangojuice}
+                      alt=""
+                    />
+                    <IonText>Mango Juice</IonText>
+                  </IonList>
+                </IonItem>
+              ) : (
+                <IonItem
+                  lines="none"
+                  className="childDaily__menu-item ion-no-padding"
+                >
+                  {/* <IonRadio
+                    name="menulist"
+                    className="childDaily__rdo"
+                    value="Mango Juice"
+                  ></IonRadio> */}
+                  <IonCheckbox
+                    className="childDaily__rdo"
+                    value="Mango Juice"
+                    checked={checked4}
+                    onIonChange={(e) => setChecked4(e.detail.checked)}
+                  />
+                  <IonImg
+                    className="icon icon--selected childDaily__selected"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonList className="childDaily__menu-text">
+                    <IonImg
+                      className="img img--fruit"
+                      src={imgMangojuice}
+                      alt=""
+                    />
+                    <IonText>Mango Juice</IonText>
+                  </IonList>
+                </IonItem>
+              )}
+            </IonList>
+            {/* </IonRadioGroup> */}
+            <IonList className="childDaily__stick">
+              <IonText className="childDaily__text">
+                “Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type
+                specimen book .....”
+              </IonText>
+              <IonLabel className="childDaily__assign childDaily__assign--blue">
+                - Ahmed Mohsen
+              </IonLabel>
+            </IonList>
           </IonList>
           <IonList className="childDaily__list ion-no-padding">
             <IonText className="childDaily__title">Nap time:</IonText>
             <IonList className="childDaily__radio ion-no-padding">
               <IonItem lines="none" className="childDaily__input">
-                <IonLabel position="floating" className="label label--blue">
+                <IonLabel
+                  position="floating"
+                  className="label label--blue label--top"
+                >
                   Duration
                 </IonLabel>
-                <IonInput
-                  type="number"
+                <IonSelect
+                  className="childDaily__input-text input input--small childDaily__select"
                   placeholder="Select"
-                  value=""
-                ></IonInput>
+                  value="1 Hour"
+                >
+                  <IonSelectOption>1 Hour</IonSelectOption>
+                  <IonSelectOption>2 Hour</IonSelectOption>
+                  <IonSelectOption>3 Hour</IonSelectOption>
+                </IonSelect>
+                {/* <IonInput
+                  className="childDaily__input-text input input--small"
+                  type="text"
+                  placeholder="Select"
+                  value="1 Hour"
+                ></IonInput> */}
               </IonItem>
               <IonItem
                 lines="none"
                 className="childDaily__input ion-margin-start"
               >
-                <IonLabel position="floating" className="label label--blue">
+                <IonLabel
+                  position="floating"
+                  className="label label--blue label--top"
+                >
                   Time the child slept
                 </IonLabel>
-                <IonInput
-                  type="number"
+                {/* <IonInput
+                  type="text"
+                  className="childDaily__input-text input input--small"
                   placeholder="Select time"
-                  value=""
-                ></IonInput>
+                  value="02:00 PM : 03:00 PM"
+                ></IonInput> */}
+                <IonSelect
+                  className="childDaily__input-text input input--small childDaily__select"
+                  placeholder="Select time"
+                  value="02:00 PM : 03:00 PM"
+                >
+                  <IonSelectOption>02:00 PM : 03:00 PM</IonSelectOption>
+                  <IonSelectOption>03:00 PM : 04:00 PM</IonSelectOption>
+                  <IonSelectOption>04:00 PM : 05:00 PM</IonSelectOption>
+                </IonSelect>
               </IonItem>
             </IonList>
           </IonList>
           <IonList className="childDaily__list ion-no-padding">
             <IonText className="childDaily__title">Bowel movement:</IonText>
             <IonRadioGroup>
-              <IonList className="childDaily__radio ion-no-padding">
-                <IonList className="childDaily__radio-item">
-                  <IonLabel className="childDaily__label">Yes</IonLabel>
-                  <IonRadio className="childDaily__rdo" value="yes"></IonRadio>
-                </IonList>
-                <IonList className="childDaily__radio-item ion-margin-start">
-                  <IonLabel className="childDaily__label">No</IonLabel>
-                  <IonRadio className="childDaily__rdo" value="no"></IonRadio>
-                </IonList>
+              <IonList className="childDaily__radio childDaily__radio-padding">
                 <IonItem
+                  lines="none"
+                  className="childDaily__radio-item childDaily__radio-item-yes ion-no-padding"
+                >
+                  <IonImg
+                    className="icon icon--selected childDaily__selected childDaily__selected--show"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonLabel className="childDaily__label childDaily__label--check childDaily__label-yes">
+                    Yes
+                  </IonLabel>
+                  <IonRadio className="childDaily__rdo" value="yes"></IonRadio>
+                </IonItem>
+
+                <IonItem
+                  lines="none"
+                  className="childDaily__radio-item  childDaily__radio-item-yes label--right  ion-no-padding"
+                >
+                  <IonLabel className="childDaily__label childDaily__label--check childDaily__label-yes label--right">
+                    3 Times
+                  </IonLabel>
+                </IonItem>
+
+                {/* <IonItem
+                  lines="none"
+                  className="childDaily__radio-item  childDaily__radio-item-yes  ion-no-padding"
+                >
+                  <IonImg
+                    className="icon icon--selected childDaily__selected childDaily__selected--show"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonLabel className="childDaily__label childDaily__label-yes">
+                    No
+                  </IonLabel>
+                  <IonRadio className="childDaily__rdo" value="no"></IonRadio>
+                </IonItem> */}
+                {/* <IonItem
                   lines="none"
                   className="childDaily__input ion-margin-start"
                 >
-                  <IonLabel position="floating" className="label label--blue">
+                  <IonLabel
+                    position="floating"
+                    className="label label--blue label--top"
+                  >
                     How many
                   </IonLabel>
-                  <IonInput type="number" value="3"></IonInput>
-                </IonItem>
+                  <IonInput
+                    className="input input--small"
+                    type="number"
+                    value="3"
+                  ></IonInput>
+                </IonItem> */}
               </IonList>
             </IonRadioGroup>
           </IonList>
           <IonList className="childDaily__list ion-no-padding">
             <IonText className="childDaily__title">Record injuries:</IonText>
             <IonRadioGroup>
-              <IonList className="childDaily__radio ion-no-padding">
-                <IonList className="childDaily__radio-item">
-                  <IonLabel className="childDaily__label">Yes</IonLabel>
+              <IonList className="childDaily__radio childDaily__radio-padding">
+                <IonItem
+                  lines="none"
+                  className="childDaily__radio-item childDaily__radio-item-yes ion-no-padding"
+                >
+                  <IonImg
+                    className="icon icon--selected childDaily__selected childDaily__selected--show"
+                    src={iconSelected}
+                    alt=""
+                  />
+                  <IonLabel className="childDaily__label childDaily__label--check childDaily__label-yes">
+                    Yes
+                  </IonLabel>
                   <IonRadio className="childDaily__rdo" value="yes"></IonRadio>
-                </IonList>
-                <IonList className="childDaily__radio-item ion-margin-start">
-                  <IonLabel className="childDaily__label">No</IonLabel>
-                  <IonRadio className="childDaily__rdo" value="no"></IonRadio>
-                </IonList>
+                </IonItem>
                 <IonItem
                   lines="none"
                   className="childDaily__input ion-margin-start"
                 >
-                  <IonLabel position="floating" className="label label--blue">
+                  <IonLabel
+                    position="floating"
+                    className="label label--blue label--top"
+                  >
                     Where
                   </IonLabel>
                   <IonInput
-                    type="number"
+                    className="input input--small"
                     placeholder="Write here"
-                    value=""
+                    type="text"
+                    value="Twinky Finger"
                   ></IonInput>
                 </IonItem>
+
                 <IonItem
                   lines="none"
-                  className="childDaily__input ion-margin-start"
+                  className="childDaily__input childDaily__input-width ion-margin-start"
                 >
-                  <IonLabel position="floating" className="label label--blue">
+                  <IonLabel
+                    position="floating"
+                    className="label label--blue label--top"
+                  >
                     When
                   </IonLabel>
-                  <IonInput
-                    type="number"
+                  {/* <IonInput
+                    className="input input--small"
                     placeholder="Select"
-                    value=""
-                  ></IonInput>
+                    type="text"
+                    value="11:00 AM"
+                  ></IonInput> */}
+                  <IonSelect
+                    className="childDaily__input-text input input--small childDaily__select"
+                    placeholder="Select"
+                    value="11:00 AM"
+                  >
+                    <IonSelectOption>10:00 AM</IonSelectOption>
+                    <IonSelectOption>11:00 AM</IonSelectOption>
+                    <IonSelectOption>12:00 AM</IonSelectOption>
+                  </IonSelect>
                 </IonItem>
               </IonList>
             </IonRadioGroup>
-            <IonTextarea
+            {/* <IonTextarea
               className="childDaily__comment"
               placeholder="Write Comment"
-            ></IonTextarea>
+            ></IonTextarea> */}
           </IonList>
-          <IonButton className="btn btn--send">Send</IonButton>
+          {/* <IonButton className="btn btn--send">Send</IonButton> */}
         </IonList>
       </IonContent>
     </IonPage>
