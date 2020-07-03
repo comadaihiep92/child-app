@@ -33,13 +33,26 @@ import "./MyProfile.scss";
 import iconBackBlack from "../../images/icon-back-black.png";
 import imgUpload from "../../images/icon-upload.png";
 import iconCloud from "../../images/icon-cloudupload.png";
-import iconCancel from "../../images/icon-cancel.png";
+import iconClose from "../../images/icon-close.png";
 import imgAvata from "../../images/img-avata.png";
 import iconCamera from "../../images/icon-camera.png";
 import iconEdit from "../../images/icon-edit.png";
 
 const MyProfile: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const [edit, setEdit] = useState("none");
+  const [cancel, setCancel] = useState("block");
+
+  const openEdit = () => {
+    setEdit("block");
+    console.log("edit");
+  };
+  const openCancel = () => {
+    setEdit("none");
+    setCancel("block");
+    console.log("cancel");
+  };
+
   return (
     <IonPage>
       <IonContent>
@@ -74,7 +87,7 @@ const MyProfile: React.FC = () => {
             >
               <IonFabButton
                 className="btn-modal btn-modal--close"
-                onClick={() => setShowModal(false)}
+                // onClick={() => setShowModal(false)}
               >
                 <IonImg className="icon icon--close" src={iconCamera} alt="" />
               </IonFabButton>
@@ -88,12 +101,27 @@ const MyProfile: React.FC = () => {
             vertical="top"
             horizontal="end"
             slot="fixed"
+            style={{ display: cancel }}
           >
             <IonFabButton
               className="btn-modal btn-modal--close"
-              onClick={() => setShowModal(false)}
+              onClick={openEdit}
             >
               <IonImg className="icon icon--close" src={iconEdit} alt="" />
+            </IonFabButton>
+          </IonFab>
+          <IonFab
+            className="modal__edit"
+            vertical="top"
+            horizontal="end"
+            slot="fixed"
+            style={{ display: edit }}
+          >
+            <IonFabButton
+              className="btn-modal btn-modal--close"
+              onClick={openCancel}
+            >
+              <IonImg className="icon icon--close" src={iconClose} alt="" />
             </IonFabButton>
           </IonFab>
         </div>
@@ -317,7 +345,8 @@ const MyProfile: React.FC = () => {
           </IonList>
           <IonList className="myprofile__item ion-no-padding">
             <IonText className="myprofile__title-top">
-              Pick up authorization person <IonLabel>*</IonLabel>
+              Pick up authorization person{" "}
+              <IonLabel className="myprofile__hoa">*</IonLabel>
             </IonText>
             <IonList className="myprofile__row">
               <IonList className="myprofile__col myprofile__col-smaller">
@@ -450,7 +479,7 @@ const MyProfile: React.FC = () => {
           </IonList>
           <IonList className="myprofile__item ion-no-padding">
             <IonText className="myprofile__title-top">
-              Pick up authorization person <IonLabel>*</IonLabel>
+              Childs Health details
             </IonText>
             <IonList className="myprofile__row">
               <IonList className="myprofile__col myprofile__col-small">
@@ -483,6 +512,13 @@ const MyProfile: React.FC = () => {
               </IonList>
             </IonList>
           </IonList>
+          <IonButton
+            style={{ display: edit }}
+            expand="full"
+            className="btn btn--save"
+          >
+            Save
+          </IonButton>
         </IonList>
       </IonContent>
     </IonPage>

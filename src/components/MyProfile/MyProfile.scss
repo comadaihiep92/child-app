@@ -61,7 +61,7 @@
   &__row {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     padding: 0;
     margin-top: 20px;
@@ -90,6 +90,9 @@
     border: 1px solid #d7d7d7;
     color: #555555 !important;
   }
+  &__hoa {
+    color: #e54949;
+  }
 }
 
 .modal__capture {
@@ -104,11 +107,20 @@
 }
 .btn--choose {
   --background: #ebebeb;
+  --border-radius: 5px;
   color: #404040;
   text-transform: capitalize;
-  font-size: 14px !important;
+  font-size: 12px !important;
+  font-weight: 600;
   height: 30px;
   &::part(native) {
-    padding: 5px;
+    padding: 3px;
   }
+}
+
+.btn--save {
+  width: 100%;
+  --background: #187bad;
+  text-transform: capitalize;
+  margin: 30px 0;
 }
