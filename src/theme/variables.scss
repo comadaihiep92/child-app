@@ -277,6 +277,11 @@ http://ionicframework.com/docs/theming/ */
     --box-shadow: none;
     margin: 0;
   }
+  &--popover {
+    --background: none;
+    --box-shadow: none;
+    margin-left: 20px;
+  }
 }
 
 .label {

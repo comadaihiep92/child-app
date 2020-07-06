@@ -15,8 +15,8 @@
   &__input {
     color: #4a4a4a;
     border: 1px solid #838383;
-    font-size: 16px;
-    padding: 10px !important;
+    font-size: 14px;
+    padding: 5px !important;
     margin-bottom: 20px;
     font-weight: 600;
   }
@@ -24,10 +24,11 @@
     margin: 30px 0 20px 0;
     --background: #187bad;
     text-transform: initial;
-    font-size: 22px;
-    height: 40px;
+    font-size: 16px;
+    height: 50px;
   }
   &__forgot {
+    font-size: 14px;
     color: #4a4a4a;
     margin: 0 auto;
   }

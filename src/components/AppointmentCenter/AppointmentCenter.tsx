@@ -167,7 +167,7 @@ const AppointmentCenter: React.FC = () => {
               onClick={() => setShowModal(true)}
             >
               <IonList className="appointment__sub-item">
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__reminder">
                     Appointment reminder
                   </IonText>
@@ -176,7 +176,7 @@ const AppointmentCenter: React.FC = () => {
                   </IonText>
                 </IonList>
 
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__date">
                     Friday: at 4 pm
                   </IonText>
@@ -189,7 +189,7 @@ const AppointmentCenter: React.FC = () => {
               onClick={() => setShowModal(true)}
             >
               <IonList className="appointment__sub-item">
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__reminder">
                     Appointment reminder
                   </IonText>
@@ -197,7 +197,7 @@ const AppointmentCenter: React.FC = () => {
                     Close
                   </IonText>
                 </IonList>
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__date">Wednesday</IonText>
                   <IonText className="appointment__date">2 day ago</IonText>
                 </IonList>
@@ -208,7 +208,7 @@ const AppointmentCenter: React.FC = () => {
               onClick={() => setShowModal(true)}
             >
               <IonList className="appointment__sub-item">
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__reminder">
                     Appointment reminder
                   </IonText>
@@ -216,7 +216,7 @@ const AppointmentCenter: React.FC = () => {
                     Close
                   </IonText>
                 </IonList>
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__date">Thursday</IonText>
                   <IonText className="appointment__date">10 days ago</IonText>
                 </IonList>
@@ -227,7 +227,7 @@ const AppointmentCenter: React.FC = () => {
               onClick={() => setShowModal(true)}
             >
               <IonList className="appointment__sub-item">
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__reminder">
                     Appointment reminder
                   </IonText>
@@ -235,7 +235,7 @@ const AppointmentCenter: React.FC = () => {
                     Close
                   </IonText>
                 </IonList>
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__date">Monday</IonText>
                   <IonText className="appointment__date">17 day ago</IonText>
                 </IonList>
@@ -246,7 +246,7 @@ const AppointmentCenter: React.FC = () => {
               onClick={() => setShowModal(true)}
             >
               <IonList className="appointment__sub-item">
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__reminder">
                     Appointment reminder
                   </IonText>
@@ -254,7 +254,7 @@ const AppointmentCenter: React.FC = () => {
                     Close
                   </IonText>
                 </IonList>
-                <IonList className="appointment__child ion-no-padding">
+                <IonList className="appointment__child">
                   <IonText className="appointment__date">Wednesday</IonText>
                   <IonText className="appointment__date">23 day ago</IonText>
                 </IonList>

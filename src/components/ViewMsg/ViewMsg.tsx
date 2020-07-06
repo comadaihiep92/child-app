@@ -43,6 +43,9 @@ const ViewMsg: React.FC = () => {
       <IonHeader className="ion-no-border appointment__header">
         <IonToolbar className="appointment__toolbar">
           <IonButtons slot="start">
+            {/* <IonRouterLink routerDirection="forward" href="/mymessages">
+              <IonImg className="icon icon-back" src={iconBack} alt="" />
+            </IonRouterLink> */}
             <Link to="/mymessages">
               <IonImg className="icon icon-back" src={iconBack} alt="" />
             </Link>
@@ -60,7 +63,7 @@ const ViewMsg: React.FC = () => {
             <IonText>abc</IonText>
           </IonPopover>
           <IonButton
-            className="btn btn--search ion-no-padding"
+            className="btn btn--popover ion-no-padding"
             slot="end"
             // onClick={() => setShowPopover(true)}
           >
@@ -88,12 +91,34 @@ const ViewMsg: React.FC = () => {
                 <IonLabel className="messages__time">8:50 PM</IonLabel>
               </IonList>
               <IonList className="viewMsg__action">
-                <IonImg className="icon icon--delete" src={iconReply} alt="" />
-                <IonImg
-                  className="icon icon--popover"
-                  src={iconPopoverBlack}
-                  alt=""
-                />
+                <IonButton
+                  className="btn btn--search ion-no-padding"
+                  slot="end"
+                >
+                  <IonImg
+                    className="icon icon--delete"
+                    src={iconReply}
+                    alt=""
+                  />
+                </IonButton>
+                <IonPopover
+                  isOpen={showPopover}
+                  cssClass="abc"
+                  onDidDismiss={(e) => setShowPopover(false)}
+                >
+                  <IonText>abc</IonText>
+                </IonPopover>
+                <IonButton
+                  className="btn btn--popover ion-no-padding"
+                  slot="end"
+                  // onClick={() => setShowPopover(true)}
+                >
+                  <IonImg
+                    className="icon icon--popover"
+                    src={iconPopoverBlack}
+                    alt=""
+                  />
+                </IonButton>
               </IonList>
             </IonList>
           </IonList>
