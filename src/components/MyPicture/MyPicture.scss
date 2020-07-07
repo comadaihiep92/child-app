@@ -17,9 +17,16 @@
     padding: 30px 0;
     margin-bottom: 20px;
   }
+  &__browser {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+
   &__desc {
     font-weight: 500;
-    margin-top: 20px;
+    // margin-top: 20px;
     font-size: 18px;
     color: #9c9c9c;
   }

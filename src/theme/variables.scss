@@ -282,6 +282,18 @@ http://ionicframework.com/docs/theming/ */
     --box-shadow: none;
     margin-left: 20px;
   }
+  &--browse {
+    --background: none;
+    --box-shadow: none;
+    --border: none;
+    text-transform: lowercase;
+    font-size: 18px;
+    margin: 0;
+    margin-left: 5px;
+    &::part(native) {
+      padding: 0;
+    }
+  }
 }
 
 .label {
