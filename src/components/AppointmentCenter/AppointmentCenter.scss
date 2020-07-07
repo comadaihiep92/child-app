@@ -15,7 +15,11 @@
   &__title-header {
     color: white;
     text-align: center;
+    &-left {
+      text-align: left;
+    }
   }
+
   &__list {
     margin-top: 10px;
     padding: 0 10px;
